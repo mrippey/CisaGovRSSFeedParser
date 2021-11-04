@@ -29,14 +29,13 @@ def search_feed_by_cve():
     print()
     total_results = len(open_feed.entries)
     for idx, entry in enumerate(open_feed.entries, start=1):
-        if cve_id in entry.id:
-            
-          
+        
+	if cve_id in entry.id:
+                      
             send_mess = f"""{idx:<2} of {total_results}  CVE: {entry.id}  
-Summary: {entry.summary}
-URL: {entry.a.get('href', [])}
-Date published: {entry.published} """
-            #view_summ = entry.description
+            Summary: {entry.summary}
+            URL: {entry.a.get('href', [])}
+	    Date published: {entry.published} """
             print(send_mess)
             print()
 
