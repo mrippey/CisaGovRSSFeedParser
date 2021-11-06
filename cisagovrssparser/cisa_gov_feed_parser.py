@@ -33,9 +33,9 @@ def search_feed_by_cve():
 	if cve_id in entry.id:
                       
             send_mess = f"""{idx:<2} of {total_results}  CVE: {entry.id}  
-            Summary: {entry.summary}
-            URL: {entry.a.get('href', [])}
-	    Date published: {entry.published} """
+Summary: {entry.summary if len(entry.summary) is not None else ''}
+URL: {entry.a.get('href', [])}
+Date published: {entry.published} """
             print(send_mess)
             print()
 
